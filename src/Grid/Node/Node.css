@@ -1,20 +1,31 @@
 .node { 
-    width: 25px;
-    height: 25px;
-    outline: 1px solid grey;
+    width: 26px;
+    height: 26px;
+    outline: 1px solid rgba(25, 120, 161, 0.349);
+    margin-top: 1px;
+    margin-right: 1px;
     display: inline-block;
+    vertical-align: middle;
+    text-align: center
 }
 
 .node-finish {
-    background-color: red
+    background-color: red;
+    
+    cursor: grab
 }
 
 .node-start {
-    background-color:green
+    background-color:green;
+    cursor: grab
 }
 
 .node-wall {
     background-color: black
+}
+
+.node-weight {
+    background-color: blue
 }
 
 .node-visited {
@@ -46,7 +57,7 @@
 
     100% {
         transform: scale(1);
-        background-color: rgba(0,190,218,0.75)
+        background-color: rgba(0,190,218,0.63)
     }
 }
 

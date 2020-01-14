@@ -4,7 +4,7 @@ import { getUnvisitedNeighbors, getAllNodes } from "./utility";
 
 export function astar(grid, startNode, finishNode){
     const visitedNodesInOrder = [];
-    const priorityQueue = [];
+    
     const unvisitedNodes = getAllNodes(grid);
     startNode.distance = 0 
     while(unvisitedNodes.length){
@@ -27,7 +27,9 @@ function updateUnvisitedNeighbors(node, finishNode, grid){
     const unvisitedNeighbors = getUnvisitedNeighbors(node,grid)
     for (const neighbor of unvisitedNeighbors){
         const mdCost = manhantanDisance(neighbor, finishNode)
-        neighbor.distance = node.distance + 1 + mdCost 
+        neighbor.distance = neighbor.isWeight? node.distance + 2 + mdCost :node.distance + 1 + mdCost
+        
+        
         neighbor.previousNode = node
     }
 }
